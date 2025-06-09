@@ -1,0 +1,267 @@
+wget https://github.com/shb95/lol/raw/refs/heads/main/make.json
+aws iam create-role --role-name kante --assume-role-policy-document file://make.json
+aws iam attach-role-policy --role-name kante --policy-arn arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
+
+sudo su
+ACCOUNT_ID=$(aws sts get-caller-identity | jq -r '. .Account')
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region us-east-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region us-east-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.c5d.2xlarge --region us-east-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.c5.xlarge --region us-east-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region us-east-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region us-east-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.c4.2xlarge --region us-east-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region us-east-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region eu-north-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region eu-north-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.t3.2xlarge --region eu-north-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.t3.2xlarge --region eu-north-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region eu-north-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region eu-north-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.t3.2xlarge --region eu-north-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region eu-north-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region us-east-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region us-east-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.c5d.2xlarge --region us-east-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.c5.xlarge --region us-east-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region us-east-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region us-east-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.c4.2xlarge --region us-east-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region us-east-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region us-west-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region us-west-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.c5d.2xlarge --region us-west-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.c5.xlarge --region us-west-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region us-west-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region us-west-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.c4.2xlarge --region us-west-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region us-west-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region us-west-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region us-west-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.c5d.2xlarge --region us-west-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.c5.xlarge --region us-west-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region us-west-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region us-west-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.c4.2xlarge --region us-west-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region us-west-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region ap-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region ap-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.c5d.2xlarge --region ap-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.c5.xlarge --region ap-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region ap-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region ap-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.c4.2xlarge --region ap-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region ap-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region ap-northeast-3 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region ap-northeast-3 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.t3.2xlarge --region ap-northeast-3 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.t3.2xlarge --region ap-northeast-3 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region ap-northeast-3 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region ap-northeast-3 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.c4.2xlarge --region ap-northeast-3 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region ap-northeast-3 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region ap-northeast-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region ap-northeast-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.c5d.2xlarge --region ap-northeast-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.c5.xlarge --region ap-northeast-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region ap-northeast-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region ap-northeast-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.c4.2xlarge --region ap-northeast-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region ap-northeast-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region ap-southeast-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region ap-southeast-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.c5d.2xlarge --region ap-southeast-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.c5.xlarge --region ap-southeast-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region ap-southeast-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region ap-southeast-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.c4.2xlarge --region ap-southeast-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region ap-southeast-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region ap-southeast-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region ap-southeast-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.c5d.2xlarge --region ap-southeast-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.c5.xlarge --region ap-southeast-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region ap-southeast-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region ap-southeast-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.c4.2xlarge --region ap-southeast-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region ap-southeast-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region ap-northeast-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region ap-northeast-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.t3.2xlarge --region ap-northeast-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.t3.2xlarge --region ap-northeast-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region ap-northeast-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region ap-northeast-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.c4.2xlarge --region ap-northeast-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region ap-northeast-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region ca-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region ca-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.c5d.2xlarge --region ca-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.c5.xlarge --region ca-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region ca-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region ca-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.c4.2xlarge --region ca-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region ca-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region eu-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region eu-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.c5d.2xlarge --region eu-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.c5.xlarge --region eu-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region eu-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region eu-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.c4.2xlarge --region eu-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region eu-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region eu-west-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region eu-west-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.c5d.2xlarge --region eu-west-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.c5.xlarge --region eu-west-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region eu-west-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region eu-west-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.c4.2xlarge --region eu-west-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region eu-west-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region eu-west-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region eu-west-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.c5d.2xlarge --region eu-west-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.c5.xlarge --region eu-west-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region eu-west-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region eu-west-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.c4.2xlarge --region eu-west-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region eu-west-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region eu-west-3 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region eu-west-3 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.c5d.2xlarge --region eu-west-3 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.c5.xlarge --region eu-west-3 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region eu-west-3 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region eu-west-3 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.t3.2xlarge --region eu-west-3 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region eu-west-3 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region sa-east-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region sa-east-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.c5d.2xlarge --region sa-east-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.c5.xlarge --region sa-east-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region sa-east-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region sa-east-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.c4.2xlarge --region sa-east-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region sa-east-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region af-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region af-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.c5d.2xlarge --region af-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.c5.xlarge --region af-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region af-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region af-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.m5d.xlarge --region af-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region af-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region ap-east-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region ap-east-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.t3.2xlarge --region ap-east-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.t3.2xlarge --region ap-east-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region ap-east-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region ap-east-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.m5d.xlarge --region ap-east-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region ap-east-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region ap-south-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region ap-south-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.c5d.2xlarge --region ap-south-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.c5.xlarge --region ap-south-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region ap-south-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region ap-south-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.m5d.xlarge --region ap-south-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region ap-south-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region ap-southeast-3 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region ap-southeast-3 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.c5d.2xlarge --region ap-southeast-3 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.c5.xlarge --region ap-southeast-3 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region ap-southeast-3 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region ap-southeast-3 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.m5d.xlarge --region ap-southeast-3 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region ap-southeast-3 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region ap-southeast-4 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region ap-southeast-4 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.c5d.2xlarge --region ap-southeast-4 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.c5.xlarge --region ap-southeast-4 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region ap-southeast-4 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region ap-southeast-4 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.m5d.xlarge --region ap-southeast-4 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region ap-southeast-4 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region ca-west-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region ca-west-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.c5d.2xlarge --region ca-west-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.c5.xlarge --region ca-west-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region ca-west-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region ca-west-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.m5d.xlarge --region ca-west-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region ca-west-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region eu-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region eu-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.t3.2xlarge --region eu-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.t3.2xlarge --region eu-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region eu-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region eu-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.m5d.xlarge --region eu-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region eu-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region eu-south-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region eu-south-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.c5d.2xlarge --region eu-south-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.c5.xlarge --region eu-south-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region eu-south-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region eu-south-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.m5d.xlarge --region eu-south-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region eu-south-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region eu-central-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region eu-central-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.c5d.2xlarge --region eu-central-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.c5.xlarge --region eu-central-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region eu-central-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region eu-central-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.m5d.xlarge --region eu-central-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region eu-central-2 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region me-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region me-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.c5d.2xlarge --region me-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.c5.xlarge --region me-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region me-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region me-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.m5d.xlarge --region me-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region me-south-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region me-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region me-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.t3.2xlarge --region me-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.t3.2xlarge --region me-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region me-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region me-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.m5d.xlarge --region me-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region me-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+
+aws sagemaker create-notebook-instance --notebook-instance-name 1 --instance-type ml.t3.2xlarge --region il-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 2 --instance-type ml.t3.2xlarge --region il-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 3 --instance-type ml.c5d.2xlarge --region il-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 4 --instance-type ml.c5.xlarge --region il-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 5 --instance-type ml.c5.2xlarge --region il-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 6 --instance-type ml.m5.2xlarge --region il-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 7 --instance-type ml.m5d.xlarge --region il-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
+aws sagemaker create-notebook-instance --notebook-instance-name 8 --instance-type ml.t3.2xlarge --region il-central-1 --role-arn arn:aws:iam::$ACCOUNT_ID:role/kante > /dev/null 2>&1
